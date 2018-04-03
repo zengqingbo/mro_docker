@@ -1,0 +1,222 @@
+CREATE TABLE public.cmpcounter
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  rsrp_avg_cmcc double precision,
+  rsrp_count_cmcc double precision,
+  rsrp_avg_chun_nume double precision,
+  rsrp_avg_chte_nume double precision,
+  rsrp_count_chun double precision,
+  rsrp_count_chte double precision,
+  rsrp_weak_cmcc double precision,
+  rsrp_weak_chun_110 double precision,
+  rsrp_weak_chte_110 double precision,
+  rsrp_weak_chun_113 double precision,
+  rsrp_weak_chte_113 double precision,
+  rsrp_avg_inter_cmcc_nume double precision,
+  rsrp_count_inter_cmcc double precision,
+  rsrp_weak_inter_cmcc double precision,
+  arfcn_str text,
+  rsrp_maxavg_cmcc double precision
+)
+
+CREATE TABLE public.cmpcounter_d
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  rsrp_avg_cmcc double precision,
+  rsrp_count_cmcc double precision,
+  rsrp_avg_chun_nume double precision,
+  rsrp_avg_chte_nume double precision,
+  rsrp_count_chun double precision,
+  rsrp_count_chte double precision,
+  rsrp_weak_cmcc double precision,
+  rsrp_weak_chun_110 double precision,
+  rsrp_weak_chte_110 double precision,
+  rsrp_weak_chun_113 double precision,
+  rsrp_weak_chte_113 double precision,
+  rsrp_avg_inter_cmcc_nume double precision,
+  rsrp_count_inter_cmcc double precision,
+  rsrp_weak_inter_cmcc double precision,
+  arfcn_str text,
+  rsrp_maxavg_cmcc double precision
+)
+
+CREATE TABLE public.cmpcounter_m
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  rsrp_avg_cmcc double precision,
+  rsrp_count_cmcc double precision,
+  rsrp_avg_chun_nume double precision,
+  rsrp_avg_chte_nume double precision,
+  rsrp_count_chun double precision,
+  rsrp_count_chte double precision,
+  rsrp_weak_cmcc double precision,
+  rsrp_weak_chun_110 double precision,
+  rsrp_weak_chte_110 double precision,
+  rsrp_weak_chun_113 double precision,
+  rsrp_weak_chte_113 double precision,
+  rsrp_avg_inter_cmcc_nume double precision,
+  rsrp_count_inter_cmcc double precision,
+  rsrp_weak_inter_cmcc double precision,
+  arfcn_str text,
+  rsrp_maxavg_cmcc double precision
+)
+
+CREATE TABLE public.freqcounter
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  freq integer,
+  freq_rsrp_count double precision,
+  freq_rsrp_accumulate double precision,
+  freq_weakcount_110 double precision,
+  freq_weakcount_113 double precision,
+  nc_operator double precision
+)
+
+CREATE TABLE public.nccmpcounter
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  ltencearfcn integer,
+  ltencpci integer,
+  nc_rsrp_count double precision,
+  nc_rsrp_accumulate double precision,
+  nc_weakcount_110 double precision,
+  nc_weakcount_113 double precision,
+  nc_operator character varying(10)
+)
+
+CREATE TABLE public.nccmpcounter_d
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  ltencearfcn integer,
+  ltencpci integer,
+  nc_rsrp_count double precision,
+  nc_rsrp_accumulate double precision,
+  nc_weakcount_110 double precision,
+  nc_weakcount_113 double precision,
+  nc_operator character varying(10)
+)
+
+CREATE TABLE public.nccmpcounter_m
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  ltencearfcn integer,
+  ltencpci integer,
+  nc_rsrp_count double precision,
+  nc_rsrp_accumulate double precision,
+  nc_weakcount_110 double precision,
+  nc_weakcount_113 double precision,
+  nc_operator character varying(10)
+)
+
+CREATE TABLE public.nccmpcounter_top10
+(
+  starttime timestamp without time zone,
+  enbid integer,
+  eci integer,
+  ltencearfcn integer,
+  ltencpci integer,
+  nc_rsrp_count double precision,
+  nc_rsrp_accumulate double precision,
+  nc_weakcount_110 double precision,
+  nc_weakcount_113 double precision,
+  nc_operator character varying(10)
+)
+
+CREATE TABLE public.nccounter
+(
+  dw_end_date date,
+  starttime timestamp without time zone,
+  enodebid integer,
+  id integer,
+  ltencearfcn integer,
+  ltencpci integer,
+  nc_rsrp_numerator double precision,
+  nc_rsrp_counter integer,
+  nc_rsrpdiff_numerator double precision,
+  nc_rsrp_diff3_counter integer,
+  nc_rsrp_diff6_counter integer,
+  nc_rsrp_diff12_counter integer,
+  nc_rsrp_diff6_valid_counter integer,
+  nc_rsrp_diff10_counter integer
+)
+
+CREATE TABLE public.ncinfo
+(
+  dw_end_date date,
+  starttime timestamp without time zone,
+  mmeues1apid bigint,
+  enodebid integer,
+  id integer,
+  ltencearfcn integer,
+  ltencpci integer,
+  ltencrsrp integer,
+  gsmncellbcch integer,
+  gsmncellncc integer,
+  gsmncellbcc integer,
+  gsmncellcarrierrssi integer
+)
+
+CREATE TABLE public.sccounter
+(
+  dw_end_date date,
+  starttime timestamp without time zone,
+  enodebid integer,
+  id integer,
+  sc_rsrp_valid_counter integer,
+  sc_rsrp_counter integer,
+  sc_rsrp_numerator double precision,
+  sc_overlapcoverage_counter integer,
+  sc_rsrp_invalid_counter integer
+)
+
+CREATE TABLE public.scinfo
+(
+  dw_end_date date,
+  "timestamp" timestamp without time zone,
+  mmeues1apid bigint,
+  enodebid integer,
+  id integer,
+  maxgsmrssi integer,
+  ltescrsrp integer,
+  ltescrsrq integer,
+  ltesctadv integer,
+  ltescaoa integer,
+  ltescphr integer,
+  ltescsinrul integer,
+  ltescri1 integer,
+  ltescri2 integer,
+  ltescri4 integer,
+  ltescri8 integer,
+  ltescplrulqci1 integer,
+  ltescplrdlqci1 integer
+)
+
+CREATE TABLE filelist
+(
+  nid integer,
+  filename character varying(200),
+  filetime timestamp without time zone,
+  tasksend timestamp without time zone,
+  taskbegin timestamp without time zone,
+  taskend timestamp without time zone,
+  status character varying(20)
+)
+
+CREATE TABLE enb_sp
+(
+  enbid integer
+)
