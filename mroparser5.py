@@ -90,7 +90,8 @@ class mro():
 					for i in range(len(l)): smr.setdefault(l[i],i)
 					self.smr_scinfo = [mri for mri in l if mri not in _NcField ]
 					self.smr_ncinfo = [mri for mri in l if mri in _NcField]
-					smrId = smrId+1
+					if 'LteScRSRP' in l : smrId = 1
+					else : smrId = 2
 				if smrId==1 and elem.tag == 'v':
 					v = elem.text.strip().split(' ')
 					if scInfoCheck == False :
