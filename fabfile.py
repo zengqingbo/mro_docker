@@ -19,6 +19,7 @@ def insertcmpfiles(date = yesterday,delcase=False):
         eutruncelltdd_upperall_d(cur,date,delcase)
         city_country_m(cur,date,delcase)
         city_country_opponent_m(cur,date,delcase)
+    conn.commit()
     conn.close()    
 
 def getcmpfiles(date = yesterday,delcase=False):
@@ -38,7 +39,7 @@ def getcmpfiles(date = yesterday,delcase=False):
                 """
                 cur.copy_expert(sql.format(date,tn), f)
     conn.close()
-    local('tar -czf {0:%Y%m%d}.tgz ' + ' '.join([fn for tn,fn in cmpfiles]))
+    local('tar -czf {0:%Y%m%d}.tgz '.format(date) + ' '.join([fn.format(date) for tn,fn in cmpfiles]))
 
 def cmpcounter_d(cur,date,delcase = False):
     if delcase : cur.execute("delete from cmpcounter_d where starttime = '{0:%Y-%m-%d}';".format(date))
